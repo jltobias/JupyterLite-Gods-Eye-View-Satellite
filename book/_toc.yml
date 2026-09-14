@@ -4,4 +4,5 @@ chapters:
   - file: notebooks/01_orbit_ground_track
   - file: notebooks/02_sensor_footprint
   - file: notebooks/03_constellation_dashboard
+  - file: notebooks/04_akobo_satellite_imagery
   - file: attribution

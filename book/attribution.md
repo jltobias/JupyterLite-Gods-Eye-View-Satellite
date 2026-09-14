@@ -37,4 +37,12 @@ The complete and controlling list is the upstream project's [`DATA_SOURCES.md`](
 
 ## What these notebooks actually use
 
-The notebooks in this repository currently use only NumPy/Matplotlib plus synthetic orbital parameters and standard orbital/spherical geometry constants. They do **not** download, bundle, cache, or redistribute CelesTrak TLEs, imagery, aircraft feeds, vessel feeds, camera images, or upstream bundled datasets. This choice keeps the JupyterLite demonstrations deterministic and avoids silently transferring third-party usage rights.
+The first three notebooks use only NumPy/Matplotlib plus synthetic orbital parameters and standard orbital/spherical geometry constants. They do **not** download or redistribute CelesTrak TLEs, aircraft feeds, vessel feeds, camera images, or upstream bundled datasets.
+
+The fourth notebook, **Akobo Satellite Imagery HUD**, uses:
+
+- **Esri World Imagery**, fetched live by the viewer from `services.arcgisonline.com`; the notebook does not store, cache, or redistribute imagery tiles. The visible credit is: **“Powered by Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community.”** Esri/provider terms apply.
+- **Akobo town center coordinates** of approximately **7.79293° N, 33.00294° E**, based on OpenStreetMap/GeoNames-derived place references. This coordinate is used only to center the map.
+- **Leaflet 1.9.4**, loaded in the browser from its public distribution CDN to render the interactive slippy map.
+
+The notebook's MONO, NVG-like, and THERMAL-like buttons are CSS display effects applied to RGB basemap tiles. They are not actual thermal, infrared, multispectral, or night-vision observations.

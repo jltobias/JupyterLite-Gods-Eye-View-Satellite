@@ -11,6 +11,8 @@ Browser-only JupyterLite notebooks and a Jupyter Book that explore satellite/orb
 | Orbital ground track notebook | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html?path=01_orbit_ground_track.ipynb |
 | Sensor / line-of-sight footprint notebook | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html?path=02_sensor_footprint.ipynb |
 | Synthetic constellation dashboard | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html?path=03_constellation_dashboard.ipynb |
+| **Akobo, South Sudan satellite imagery HUD** | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html?path=04_akobo_satellite_imagery.ipynb |
+| Akobo notebook in the Jupyter Book | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/notebooks/04_akobo_satellite_imagery.html |
 
 The GitHub Actions workflow builds both sites on pushes to `main`. If this repository has not used GitHub Pages before, enable **Settings → Pages → Build and deployment → Source: GitHub Actions** once; the URLs above are the standard GitHub Pages locations for this repository.
 
@@ -19,10 +21,11 @@ The GitHub Actions workflow builds both sites on pushes to `main`. If this repos
 1. **Orbital ground track** — a simplified circular two-body orbit transformed onto a rotating Earth.
 2. **Sensor / line-of-sight footprint** — spherical-Earth horizon geometry and a surface footprint ring.
 3. **Synthetic constellation dashboard** — a small Walker-like synthetic constellation, global sub-satellite view, and occupancy grid.
-4. **Jupyter Book** — narrative documentation, notebook rendering, and attribution/source notes.
-5. **JupyterLite** — the same notebooks running client-side in a Pyodide Python kernel; no notebook server is required.
+4. **Akobo satellite imagery HUD** — a live Esri World Imagery view centered on Akobo, South Sudan, with pan/zoom, coordinate readout, center reticle, 5/15/30 km rings, and optional display filters inspired by the visual language of the upstream demos.
+5. **Jupyter Book** — narrative documentation, notebook rendering, and attribution/source notes.
+6. **JupyterLite** — the same notebooks running client-side in a Pyodide Python kernel; no notebook server is required.
 
-These examples are intentionally lightweight and original. They do **not** copy the upstream application's JavaScript/Cesium implementation and do not bundle its third-party datasets.
+These examples are intentionally lightweight and original. They do **not** copy the upstream application's JavaScript/Cesium implementation or bundle its third-party datasets. The Akobo notebook requests Esri imagery directly from Esri at runtime and keeps the imagery attribution visible.
 
 ## Upstream project citation
 
@@ -30,7 +33,7 @@ Primary inspiration and reference implementation:
 
 > **Bilawal Sidhu. _God's Eye View_ (2026).** GitHub: https://github.com/bilawalsidhu/gods-eye-view
 
-The upstream project describes itself as a browser-based situational-awareness globe with live aircraft, ships, satellites, earthquakes, traffic, public cameras, and other public signals. Its satellite implementation uses [`satellite.js`](https://github.com/shashwatak/satellite-js) for orbital propagation and documents **CelesTrak** as the TLE source.
+The upstream project describes itself as a browser-based situational-awareness globe with live aircraft, ships, satellites, earthquakes, traffic, public cameras, and other public signals. Its satellite implementation uses [`satellite.js`](https://github.com/shashwatak/satellite-js) for orbital propagation and documents **CelesTrak** as the TLE source. Its keyless satellite basemap uses **Esri World Imagery**.
 
 Upstream licensing and attribution documents:
 
@@ -66,13 +69,17 @@ See the upstream [`DATA_SOURCES.md`](https://github.com/bilawalsidhu/gods-eye-vi
 
 ### Data actually used in this repository
 
-The notebooks currently use **synthetic orbital parameters only** plus standard mathematical/physical constants. They do not download or redistribute upstream TLEs, imagery, flight/vessel data, CCTV imagery, or bundled infrastructure data. This makes the examples deterministic, JupyterLite-friendly, and clear about third-party rights.
+The first three notebooks use **synthetic orbital parameters only** plus standard mathematical/physical constants.
+
+The fourth notebook uses **Esri World Imagery at runtime** to display Akobo, South Sudan. Imagery tiles are fetched directly from Esri in the browser and are not committed, cached, or redistributed by this repository. The notebook displays the provider credit **“Powered by Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community.”** The Akobo view is centered at approximately **7.79293° N, 33.00294° E**, based on OpenStreetMap/GeoNames-derived place references.
+
+Its MONO, NVG-like, and THERMAL-like buttons are only browser display filters; they do not represent real sensor products.
 
 ## Local build
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # Windows PowerShell: .venv\\Scripts\\Activate.ps1
+source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 jupyter-book build book
@@ -94,9 +101,10 @@ book/
     01_orbit_ground_track.ipynb
     02_sensor_footprint.ipynb
     03_constellation_dashboard.ipynb
+    04_akobo_satellite_imagery.ipynb
 requirements.txt
 ```
 
 ## Disclaimer
 
-This is an independent educational repository. It is not affiliated with or endorsed by Bilawal Sidhu, CelesTrak, Esri, OpenStreetMap, OpenSky, or other upstream providers. Simplified notebook calculations are for learning and visualization, not operational orbit determination, targeting, navigation, or safety-of-life use.
+This is an independent educational repository. It is not affiliated with or endorsed by Bilawal Sidhu, CelesTrak, Esri, OpenStreetMap, OpenSky, or other upstream providers. Simplified notebook calculations and display effects are for learning and visualization, not operational orbit determination, targeting, navigation, sensor analysis, or safety-of-life use.
