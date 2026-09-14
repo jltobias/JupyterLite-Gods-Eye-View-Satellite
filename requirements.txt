@@ -1,0 +1,5 @@
+jupyter-book==1.0.4.post1
+jupyterlite-core[lab]==0.8.3
+jupyterlite-pyodide-kernel>=0.8,<0.9
+numpy>=2.0
+matplotlib>=3.9
