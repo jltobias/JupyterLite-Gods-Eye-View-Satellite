@@ -1,0 +1,7 @@
+:root{--pst-color-primary:#087f8c;--pst-color-link:#087f8c}
+.bd-article-container{max-width:1080px}
+.bd-article img{border-radius:10px}
+.bd-article h1{letter-spacing:-.025em}
+.bd-article table{font-size:.9rem}
+.bd-article iframe{max-width:100%;background:#0b1727}
+.bd-article a:focus-visible{outline:3px solid #d8891e;outline-offset:3px}

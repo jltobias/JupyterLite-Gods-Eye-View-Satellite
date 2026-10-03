@@ -1,48 +1,41 @@
-# Attribution and data-source notes
+# Attribution, sources and licensing
 
 ## Primary inspiration
 
-This project cites and is inspired by:
+Bilawal Sidhu. **God's Eye View** (2026). [Repository](https://github.com/bilawalsidhu/gods-eye-view). Integration inspected at [`e7707d9a0f34d9fbffc300023c319f95caa5be30`](https://github.com/bilawalsidhu/gods-eye-view/tree/e7707d9a0f34d9fbffc300023c319f95caa5be30) on 2 October 2026.
 
-> Bilawal Sidhu. **God's Eye View** (2026). GitHub repository: https://github.com/bilawalsidhu/gods-eye-view
+Upstream source is MIT, copyright © 2026 Bilawal Sidhu. The [license](https://github.com/bilawalsidhu/gods-eye-view/blob/main/LICENSE) expressly excludes third-party data and assets. Consult [DATA_SOURCES.md](https://github.com/bilawalsidhu/gods-eye-view/blob/main/DATA_SOURCES.md) and [model credits](https://github.com/bilawalsidhu/gods-eye-view/blob/main/public/models/README.md). The TeleGeography cable dataset is flagged upstream as CC BY-NC-SA 3.0; Bhote Koshi event imagery/derived coordinates as CC BY-NC 4.0; OSM-derived datasets as ODbL. These assets are not included here.
 
-The upstream source code is released under the MIT License, copyright © 2026 Bilawal Sidhu. Its MIT grant applies to source code, **not** to third-party data or visual assets. See:
+Original code, prose, diagrams and synthetic fixtures are released under this repository's [MIT license](https://github.com/jltobias/JupyterLite-Gods-Eye-View-Satellite/blob/main/LICENSE). No upstream implementation, models or bundled datasets are copied. The extension is original code calling Cesium's API in an inspected upstream scene lifecycle.
 
-- Upstream license: https://github.com/bilawalsidhu/gods-eye-view/blob/main/LICENSE
-- Upstream data/source attribution: https://github.com/bilawalsidhu/gods-eye-view/blob/main/DATA_SOURCES.md
-- Upstream bundled 3D-model attribution: https://github.com/bilawalsidhu/gods-eye-view/blob/main/public/models/README.md
+## Actual runtime providers and libraries
 
-This repository is not affiliated with or endorsed by Bilawal Sidhu or the upstream data providers.
-
-## Upstream sources relevant to these examples
-
-God's Eye View documents a much larger source catalog. Sources especially relevant to its satellite/globe context include:
-
-| Upstream source | Upstream use | Attribution / terms summary |
+| Resource | Use and attribution | License / terms |
 |---|---|---|
-| [CelesTrak](https://celestrak.org/) | Satellite TLEs used with SGP4 | Upstream credits “CelesTrak (celestrak.org), Dr. T.S. Kelso”; consult CelesTrak terms/citation guidance. |
-| [Esri World Imagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9) | Keyless satellite imagery basemap | Provider attribution and Esri terms apply. |
-| [Re:Earth / Mapterhorn terrain](https://github.com/reearth/reearth-visualizer) | Keyless terrain stack | Upstream identifies terrain mesh as CC BY 4.0 and EGM2008 geoid material as U.S. public-domain-origin. |
-| [OpenStreetMap](https://www.openstreetmap.org/copyright) | Roads and mapped context | ODbL 1.0; © OpenStreetMap contributors. |
-| [USGS](https://www.usgs.gov/) | Earthquakes | U.S. public-domain data; upstream requests courtesy attribution. |
-| [OpenSky Network](https://opensky-network.org/) | Live aircraft | Upstream documents non-commercial research/education restrictions; consult OpenSky before deployment. |
-| [adsb.lol](https://adsb.lol/) | Flight fallback / military traffic | Upstream documents ODbL 1.0. |
-| [AISStream.io](https://aisstream.io/) | Live vessels | Upstream documents it as a public-broadcast/beta service and gives courtesy attribution. |
-| [The Space Devs — Launch Library 2](https://thespacedevs.com/llapi) | Launch and payload context | Use subject to The Space Devs terms and API limits. |
-| [Open-Meteo](https://open-meteo.com/en/licence) | Weather | CC BY 4.0 with linked attribution requirements. |
-| [GDELT Project](https://www.gdeltproject.org/) | Regional-news fallback | Upstream documents citation/link requirements. |
-| [TeleGeography Submarine Cable Map](https://www.submarinecablemap.com/) | Bundled submarine-cable layer | Upstream explicitly flags CC BY-NC-SA 3.0 / NonCommercial and says commercial users must remove or separately license it. |
+| Esri World Imagery | Notebook 04, optional 05 basemap. **Powered by Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community** | [Service metadata](https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer); Esri/provider terms |
+| Leaflet 1.9.4 | Original 2D viewers, loaded from unpkg | [BSD-2-Clause](https://github.com/Leaflet/Leaflet/blob/v1.9.4/LICENSE) |
+| CesiumJS 1.124.0 | Original 3D teaching scene, loaded from jsDelivr | [Apache-2.0](https://github.com/CesiumGS/cesium/blob/1.124/LICENSE.md) |
+| NASA GIBS / Worldview | Dated links and browse-image request in 08 | [GIBS guide](https://nasa-gibs.github.io/gibs-api-docs/access-basics/); cite selected product and acquisition metadata |
+| Jupyter Book / JupyterLite | Build and browser runtime | BSD-3-Clause; see repository notices |
+| Pyodide | WebAssembly Python kernel | MPL-2.0 and component licenses |
+| NumPy / Matplotlib | Numerical work and analytical figures | BSD-3-Clause / Matplotlib's PSF-based license |
+| OpenAI API | Optional local `gpt-6-astra` example | Service terms, account access and usage charges apply |
 
-The complete and controlling list is the upstream project's [`DATA_SOURCES.md`](https://github.com/bilawalsidhu/gods-eye-view/blob/main/DATA_SOURCES.md), not this summary.
+Imagery is requested at runtime; no Esri/NASA tiles are committed as data. Normal browser/provider caches may retain fetched responses. Keep on-map provider credits visible. Request time is not acquisition time, and display filters are not spectral measurements.
 
-## What these notebooks actually use
+The approximate Akobo center (7.79293° N, 33.00294° E) is inherited from the original notebook's OpenStreetMap/GeoNames-derived place reference. It is only a map center, not a surveyed location. No OSM tiles, population surfaces, real facility records, or case line lists are included in the new exercise.
 
-The first three notebooks use only NumPy/Matplotlib plus synthetic orbital parameters and standard orbital/spherical geometry constants. They do **not** download or redistribute CelesTrak TLEs, aircraft feeds, vessel feeds, camera images, or upstream bundled datasets.
+## Teaching sources
 
-The fourth notebook, **Akobo Satellite Imagery HUD**, uses:
+- [CDC Field Epidemiology Manual](https://www.cdc.gov/field-epi-manual/php/chapters/index.html): definitions, descriptive analysis, outbreak investigation context. No surveillance dataset is copied.
+- [WHO AccessMod](https://www.who.int/tools/accessmod-geographic-access-to-health-care): geographic accessibility context. The simple distance lab is not an implementation of AccessMod.
+- [PySAL global Moran's I](https://pysal.org/esda/stable/user-guide/global_morans_i.html): statistic and weights reference. The lab uses original NumPy code.
+- [RFC 7946](https://www.rfc-editor.org/rfc/rfc7946): GeoJSON coordinates and interchange.
+- [Cesium API](https://cesium.com/learn/cesiumjs/ref-doc/): scene and time-dynamic rendering.
+- [GPT-6 Astra](https://developers.openai.com/api/docs/models/gpt-6-astra), [structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs), [vision limitations](https://developers.openai.com/api/docs/guides/images-vision): applied model workflows, verified 2 October 2026.
 
-- **Esri World Imagery**, fetched live by the viewer from `services.arcgisonline.com`; the notebook does not store, cache, or redistribute imagery tiles. The visible credit is: **“Powered by Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community.”** Esri/provider terms apply.
-- **Akobo town center coordinates** of approximately **7.79293° N, 33.00294° E**, based on OpenStreetMap/GeoNames-derived place references. This coordinate is used only to center the map.
-- **Leaflet 1.9.4**, loaded in the browser from its public distribution CDN to render the interactive slippy map.
+## Artwork and generated products
 
-The notebook's MONO, NVG-like, and THERMAL-like buttons are CSS display effects applied to RGB basemap tiles. They are not actual thermal, infrared, multispectral, or night-vision observations.
+The README/book splash is an AI-generated illustration made with OpenAI's built-in image generation tool. It is not remotely sensed imagery or scientific evidence. The prompt, date and provenance are recorded in [`book/assets/README.md`](https://github.com/jltobias/JupyterLite-Gods-Eye-View-Satellite/blob/main/book/assets/README.md). Analytical figures are computed from the original synthetic fixtures; the workflow SVG is an original diagram. No third-party logos are used.
+
+See [THIRD_PARTY_NOTICES.md](https://github.com/jltobias/JupyterLite-Gods-Eye-View-Satellite/blob/main/THIRD_PARTY_NOTICES.md) and [CITATION.cff](https://github.com/jltobias/JupyterLite-Gods-Eye-View-Satellite/blob/main/CITATION.cff). This independent project is not endorsed by its inspiration, cited institutions, or service providers.

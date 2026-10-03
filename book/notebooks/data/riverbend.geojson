@@ -1,0 +1,581 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "S01",
+      "properties": {
+        "name": "Training sector S01",
+        "kind": "sector",
+        "population": 4200,
+        "lon": 32.7,
+        "lat": 7.6,
+        "flood_fraction": 0.158,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32.6,
+              7.5
+            ],
+            [
+              32.8,
+              7.5
+            ],
+            [
+              32.8,
+              7.7
+            ],
+            [
+              32.6,
+              7.7
+            ],
+            [
+              32.6,
+              7.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S02",
+      "properties": {
+        "name": "Training sector S02",
+        "kind": "sector",
+        "population": 6800,
+        "lon": 32.9,
+        "lat": 7.6,
+        "flood_fraction": 0.421,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32.8,
+              7.5
+            ],
+            [
+              33.0,
+              7.5
+            ],
+            [
+              33.0,
+              7.7
+            ],
+            [
+              32.8,
+              7.7
+            ],
+            [
+              32.8,
+              7.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S03",
+      "properties": {
+        "name": "Training sector S03",
+        "kind": "sector",
+        "population": 3500,
+        "lon": 33.1,
+        "lat": 7.6,
+        "flood_fraction": 0.323,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.0,
+              7.5
+            ],
+            [
+              33.2,
+              7.5
+            ],
+            [
+              33.2,
+              7.7
+            ],
+            [
+              33.0,
+              7.7
+            ],
+            [
+              33.0,
+              7.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S04",
+      "properties": {
+        "name": "Training sector S04",
+        "kind": "sector",
+        "population": 9100,
+        "lon": 33.3,
+        "lat": 7.6,
+        "flood_fraction": 0.093,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.2,
+              7.5
+            ],
+            [
+              33.4,
+              7.5
+            ],
+            [
+              33.4,
+              7.7
+            ],
+            [
+              33.2,
+              7.7
+            ],
+            [
+              33.2,
+              7.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S05",
+      "properties": {
+        "name": "Training sector S05",
+        "kind": "sector",
+        "population": 5200,
+        "lon": 32.7,
+        "lat": 7.8,
+        "flood_fraction": 0.222,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32.6,
+              7.7
+            ],
+            [
+              32.8,
+              7.7
+            ],
+            [
+              32.8,
+              7.9
+            ],
+            [
+              32.6,
+              7.9
+            ],
+            [
+              32.6,
+              7.7
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S06",
+      "properties": {
+        "name": "Training sector S06",
+        "kind": "sector",
+        "population": 8000,
+        "lon": 32.9,
+        "lat": 7.8,
+        "flood_fraction": 0.638,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32.8,
+              7.7
+            ],
+            [
+              33.0,
+              7.7
+            ],
+            [
+              33.0,
+              7.9
+            ],
+            [
+              32.8,
+              7.9
+            ],
+            [
+              32.8,
+              7.7
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S07",
+      "properties": {
+        "name": "Training sector S07",
+        "kind": "sector",
+        "population": 2900,
+        "lon": 33.1,
+        "lat": 7.8,
+        "flood_fraction": 0.482,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.0,
+              7.7
+            ],
+            [
+              33.2,
+              7.7
+            ],
+            [
+              33.2,
+              7.9
+            ],
+            [
+              33.0,
+              7.9
+            ],
+            [
+              33.0,
+              7.7
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S08",
+      "properties": {
+        "name": "Training sector S08",
+        "kind": "sector",
+        "population": 6100,
+        "lon": 33.3,
+        "lat": 7.8,
+        "flood_fraction": 0.118,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.2,
+              7.7
+            ],
+            [
+              33.4,
+              7.7
+            ],
+            [
+              33.4,
+              7.9
+            ],
+            [
+              33.2,
+              7.9
+            ],
+            [
+              33.2,
+              7.7
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S09",
+      "properties": {
+        "name": "Training sector S09",
+        "kind": "sector",
+        "population": 7600,
+        "lon": 32.7,
+        "lat": 8.0,
+        "flood_fraction": 0.109,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32.6,
+              7.9
+            ],
+            [
+              32.8,
+              7.9
+            ],
+            [
+              32.8,
+              8.1
+            ],
+            [
+              32.6,
+              8.1
+            ],
+            [
+              32.6,
+              7.9
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S10",
+      "properties": {
+        "name": "Training sector S10",
+        "kind": "sector",
+        "population": 4800,
+        "lon": 32.9,
+        "lat": 8.0,
+        "flood_fraction": 0.25,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32.8,
+              7.9
+            ],
+            [
+              33.0,
+              7.9
+            ],
+            [
+              33.0,
+              8.1
+            ],
+            [
+              32.8,
+              8.1
+            ],
+            [
+              32.8,
+              7.9
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S11",
+      "properties": {
+        "name": "Training sector S11",
+        "kind": "sector",
+        "population": 5600,
+        "lon": 33.1,
+        "lat": 8.0,
+        "flood_fraction": 0.197,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.0,
+              7.9
+            ],
+            [
+              33.2,
+              7.9
+            ],
+            [
+              33.2,
+              8.1
+            ],
+            [
+              33.0,
+              8.1
+            ],
+            [
+              33.0,
+              7.9
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S12",
+      "properties": {
+        "name": "Training sector S12",
+        "kind": "sector",
+        "population": 3900,
+        "lon": 33.3,
+        "lat": 8.0,
+        "flood_fraction": 0.073,
+        "synthetic": true,
+        "as_of": "2026-09-15T12:00:00Z"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.2,
+              7.9
+            ],
+            [
+              33.4,
+              7.9
+            ],
+            [
+              33.4,
+              8.1
+            ],
+            [
+              33.2,
+              8.1
+            ],
+            [
+              33.2,
+              7.9
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "C1",
+      "properties": {
+        "name": "Fictional clinic 1",
+        "kind": "clinic",
+        "capacity_day": 90,
+        "available": true,
+        "synthetic": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.71,
+          7.64
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "C2",
+      "properties": {
+        "name": "Fictional clinic 2",
+        "kind": "clinic",
+        "capacity_day": 70,
+        "available": true,
+        "synthetic": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.09,
+          7.61
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "C3",
+      "properties": {
+        "name": "Fictional clinic 3",
+        "kind": "clinic",
+        "capacity_day": 50,
+        "available": false,
+        "synthetic": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9,
+          7.99
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "R1",
+      "properties": {
+        "name": "Illustrative river axis",
+        "kind": "river",
+        "synthetic": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            32.72,
+            7.48
+          ],
+          [
+            32.83,
+            7.65
+          ],
+          [
+            32.91,
+            7.82
+          ],
+          [
+            33.0,
+            8.12
+          ]
+        ]
+      }
+    }
+  ]
+}

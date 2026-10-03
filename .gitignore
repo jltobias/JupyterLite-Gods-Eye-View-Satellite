@@ -2,3 +2,10 @@ book/_build/
 .jupyterlite.doit.db*
 .ipynb_checkpoints/
 __pycache__/
+.venv/
+.cache/
+.env
+.env.*
+!.env.example
+book/notebooks/exports/
+.pytest_cache/

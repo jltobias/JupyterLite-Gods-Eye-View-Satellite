@@ -3,6 +3,7 @@ name: Build and deploy Jupyter Book + JupyterLite
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -11,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -27,26 +28,46 @@ jobs:
           python-version: '3.12'
           cache: pip
 
+      - name: Set up Node for viewer contract checks
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
       - name: Install build dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build Jupyter Book
-        run: jupyter-book build book
+      - name: Verify numerical and model contracts
+        run: python -m unittest discover -s tests -v
+
+      - name: Generate standalone demos
+        run: python scripts/build_demos.py
+
+      - name: Check viewer syntax and adapter validation
+        run: node --test tests/test_viewers.mjs
+
+      - name: Build and execute all Jupyter Book notebooks
+        run: jupyter-book build book --warningiserror --keep-going
 
       - name: Build JupyterLite inside the book site
         run: jupyter lite build --contents book/notebooks --output-dir book/_build/html/lite
 
+      - name: Verify the published artifact
+        run: python scripts/verify_site.py
+
       - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
           path: book/_build/html
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

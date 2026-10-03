@@ -1,0 +1,115 @@
+{
+  "scenario": "Riverbend synthetic exercise",
+  "synthetic": true,
+  "as_of": "2026-09-15T12:00:00Z",
+  "period": "2026-09-01/2026-09-14",
+  "crs": "OGC:CRS84",
+  "sources": [
+    {
+      "id": "S1",
+      "path": "data/riverbend.geojson",
+      "description": "Fictional sectors, population and clinics"
+    },
+    {
+      "id": "S2",
+      "path": "data/daily_cases.csv",
+      "description": "Synthetic reported first episodes by onset day; last 3 days incomplete"
+    }
+  ],
+  "metrics": {
+    "reported_cases": 1520,
+    "population": 67700,
+    "sectors": [
+      {
+        "id": "S01",
+        "population": 4200,
+        "cases": 88,
+        "rate_10000": 209.52380952380952,
+        "flood_fraction": 0.158
+      },
+      {
+        "id": "S02",
+        "population": 6800,
+        "cases": 206,
+        "rate_10000": 302.94117647058823,
+        "flood_fraction": 0.421
+      },
+      {
+        "id": "S03",
+        "population": 3500,
+        "cases": 60,
+        "rate_10000": 171.42857142857142,
+        "flood_fraction": 0.323
+      },
+      {
+        "id": "S04",
+        "population": 9100,
+        "cases": 104,
+        "rate_10000": 114.28571428571429,
+        "flood_fraction": 0.093
+      },
+      {
+        "id": "S05",
+        "population": 5200,
+        "cases": 137,
+        "rate_10000": 263.46153846153845,
+        "flood_fraction": 0.222
+      },
+      {
+        "id": "S06",
+        "population": 8000,
+        "cases": 422,
+        "rate_10000": 527.5,
+        "flood_fraction": 0.638
+      },
+      {
+        "id": "S07",
+        "population": 2900,
+        "cases": 120,
+        "rate_10000": 413.7931034482759,
+        "flood_fraction": 0.482
+      },
+      {
+        "id": "S08",
+        "population": 6100,
+        "cases": 81,
+        "rate_10000": 132.78688524590163,
+        "flood_fraction": 0.118
+      },
+      {
+        "id": "S09",
+        "population": 7600,
+        "cases": 72,
+        "rate_10000": 94.73684210526316,
+        "flood_fraction": 0.109
+      },
+      {
+        "id": "S10",
+        "population": 4800,
+        "cases": 117,
+        "rate_10000": 243.75,
+        "flood_fraction": 0.25
+      },
+      {
+        "id": "S11",
+        "population": 5600,
+        "cases": 84,
+        "rate_10000": 150.0,
+        "flood_fraction": 0.197
+      },
+      {
+        "id": "S12",
+        "population": 3900,
+        "cases": 29,
+        "rate_10000": 74.35897435897436,
+        "flood_fraction": 0.073
+      }
+    ]
+  },
+  "limitations": [
+    "Fictional training data, not a real outbreak",
+    "Final 3 onset days have reporting delay",
+    "No causal inference from spatial overlap",
+    "Flood fractions are invented, not satellite measurements"
+  ]
+}

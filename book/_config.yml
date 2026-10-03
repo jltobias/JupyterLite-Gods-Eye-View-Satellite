@@ -1,4 +1,4 @@
-title: JupyterLite God's Eye View — Satellite Examples
+title: God's Eye View — Geospatial Learning Lab
 author: James L. Tobias
 copyright: "2026"
 only_build_toc_files: true
@@ -12,3 +12,8 @@ repository:
 html:
   use_repository_button: true
   use_issues_button: true
+sphinx:
+  config:
+    html_static_path: ["_static"]
+    html_css_files: ["lab.css"]
+    nb_execution_raise_on_error: true

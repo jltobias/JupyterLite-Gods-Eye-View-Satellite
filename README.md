@@ -1,110 +1,102 @@
-# JupyterLite God's Eye View — Satellite Examples
+# God's Eye View · Geospatial Learning Lab
 
-Browser-only JupyterLite notebooks and a Jupyter Book that explore satellite/orbital concepts inspired by [Bilawal Sidhu's **God's Eye View**](https://github.com/bilawalsidhu/gods-eye-view).
+![Illustrative Earth-observation and global-health workbench; artwork map panels are synthetic](book/assets/geospatial-lab-hero.png)
 
-## Live sites
+**Explore. Compute. Question. Explain.** Twelve browser-ready notebooks connect satellite geometry, 2D/3D maps, emergency operations, spatial epidemiology, and GPT-6 Astra-assisted analysis.
 
-| Resource | Live link |
-|---|---|
-| **Jupyter Book** | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/ |
-| **JupyterLite Lab** | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html |
-| Orbital ground track notebook | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html?path=01_orbit_ground_track.ipynb |
-| Sensor / line-of-sight footprint notebook | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html?path=02_sensor_footprint.ipynb |
-| Synthetic constellation dashboard | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html?path=03_constellation_dashboard.ipynb |
-| **Akobo, South Sudan satellite imagery HUD** | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html?path=04_akobo_satellite_imagery.ipynb |
-| Akobo notebook in the Jupyter Book | https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/notebooks/04_akobo_satellite_imagery.html |
+[**Read the Jupyter Book**](https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/) · [**Launch JupyterLite**](https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html) · [**2D EOC demo**](https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/_static/demos/riverbend-2d.html) · [**3D scene demo**](https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/_static/demos/riverbend-3d.html)
 
-The GitHub Actions workflow builds both sites on pushes to `main`. If this repository has not used GitHub Pages before, enable **Settings → Pages → Build and deployment → Source: GitHub Actions** once; the URLs above are the standard GitHub Pages locations for this repository.
+An independent educational companion to [Bilawal Sidhu's **God's Eye View**](https://github.com/bilawalsidhu/gods-eye-view), with original Python labs, Leaflet/Cesium teaching viewers, and an optional adapter for loading notebook layers into the actual upstream app. **NASA Worldview**, used in lab 08, is a separate NASA imagery application.
 
-## What is included
+## Start with a mission
 
-1. **Orbital ground track** — a simplified circular two-body orbit transformed onto a rotating Earth.
-2. **Sensor / line-of-sight footprint** — spherical-Earth horizon geometry and a surface footprint ring.
-3. **Synthetic constellation dashboard** — a small Walker-like synthetic constellation, global sub-satellite view, and occupancy grid.
-4. **Akobo satellite imagery HUD** — a live Esri World Imagery view centered on Akobo, South Sudan, with pan/zoom, coordinate readout, center reticle, 5/15/30 km rings, and optional display filters inspired by the visual language of the upstream demos.
-5. **Jupyter Book** — narrative documentation, notebook rendering, and attribution/source notes.
-6. **JupyterLite** — the same notebooks running client-side in a Pyodide Python kernel; no notebook server is required.
-
-These examples are intentionally lightweight and original. They do **not** copy the upstream application's JavaScript/Cesium implementation or bundle its third-party datasets. The Akobo notebook requests Esri imagery directly from Esri at runtime and keeps the imagery attribution visible.
-
-## Upstream project citation
-
-Primary inspiration and reference implementation:
-
-> **Bilawal Sidhu. _God's Eye View_ (2026).** GitHub: https://github.com/bilawalsidhu/gods-eye-view
-
-The upstream project describes itself as a browser-based situational-awareness globe with live aircraft, ships, satellites, earthquakes, traffic, public cameras, and other public signals. Its satellite implementation uses [`satellite.js`](https://github.com/shashwatak/satellite-js) for orbital propagation and documents **CelesTrak** as the TLE source. Its keyless satellite basemap uses **Esri World Imagery**.
-
-Upstream licensing and attribution documents:
-
-- Source-code license: https://github.com/bilawalsidhu/gods-eye-view/blob/main/LICENSE
-- Data sources and provider terms: https://github.com/bilawalsidhu/gods-eye-view/blob/main/DATA_SOURCES.md
-- Bundled 3D-model provenance: https://github.com/bilawalsidhu/gods-eye-view/blob/main/public/models/README.md
-
-The upstream code is MIT-licensed (copyright © 2026 Bilawal Sidhu), but its license expressly states that the MIT grant does **not** extend to third-party datasets, runtime data providers, or third-party 3D assets. Those remain subject to their respective licenses and terms.
-
-## Upstream data/source attribution
-
-The upstream `DATA_SOURCES.md` is the authoritative list. Important providers documented there include:
-
-| Source | Used by God's Eye View for | Attribution / terms noted upstream |
+| Mission | Route | Produce |
 |---|---|---|
-| **CelesTrak** | Satellite TLEs / SGP4 | Credit: “CelesTrak (celestrak.org), Dr. T.S. Kelso”; citation requested. |
-| **Esri World Imagery** | Keyless satellite basemap | Esri/provider attribution required; provider terms apply. |
-| **Re:Earth Terrain / Mapterhorn** | Keyless terrain | Terrain mesh CC BY 4.0; EGM2008 geoid material U.S. public-domain-origin. |
-| **OpenStreetMap / Overpass** | Roads and mapped context | ODbL 1.0; © OpenStreetMap contributors. |
-| **OpenSky Network** | Primary live-flight snapshot | Upstream documents non-commercial research/education restrictions; consult provider terms. |
-| **adsb.lol** | Flight fallback, military traffic, traces | ODbL 1.0. |
-| **AISStream.io** | Live vessels | Courtesy attribution; provider/service terms apply. |
-| **The Space Devs — Launch Library 2** | Launch/payload/stage/recovery context | Provider terms and API limits apply; attribution encouraged. |
-| **USGS** | Earthquakes | U.S. public domain; courtesy attribution. |
-| **Open-Meteo** | Weather | CC BY 4.0 with attribution requirements. |
-| **GDELT Project** | Regional-news fallback | Citation/link required under upstream-documented terms. |
-| **City/transport camera providers** | Public CCTV layers | Provider-specific open-data terms; several require attribution. |
-| **TeleGeography Submarine Cable Map** | Bundled cable layer | CC BY-NC-SA 3.0; **NonCommercial**. Upstream warns commercial users to remove or separately license it. |
-| **OpenStreetMap-derived datacenters/dams** | Bundled infrastructure | ODbL 1.0. |
-| **NASA FIRMS** | Active-fire data | Upstream documents U.S. public-domain/CC0-origin with citation requested. |
+| Browser EOC | 05 → 07 → 09 → 12 | Common operating picture, clinic-access comparison, 3D handover |
+| Spatial epidemiology and global health | 06 → 08 → 11 → 12 | Onset curve, rates, imagery provenance, spatial uncertainty |
+| Astra as an analysis partner | 05 → 10 → 12 | Aggregate evidence packet and a structured, reviewed briefing |
+| Satellite foundations | 01 → 02 → 03 → 04 | Ground tracks, visibility geometry and imagery context |
 
-See the upstream [`DATA_SOURCES.md`](https://github.com/bilawalsidhu/gods-eye-view/blob/main/DATA_SOURCES.md) before integrating any real feed. Provider licenses, quotas, authentication requirements, and commercial-use rules are independent of this repository.
+The **Riverbend exercise is fictional**. Its sectors, clinics, populations, cases, and flood fractions describe no real outbreak or community. Analysis runs with bundled data and no model key. Interactive libraries require CDN access; optional imagery and NASA links require their providers. Initial JupyterLite startup downloads its runtime/packages. This is not an air-gapped or operational EOC deployment.
 
-### Data actually used in this repository
+![Same fictional sectors compared by workload, population-normalized reports and invented flood exposure](book/assets/analytical-preview.png)
 
-The first three notebooks use **synthetic orbital parameters only** plus standard mathematical/physical constants.
+## Notebook gallery
 
-The fourth notebook uses **Esri World Imagery at runtime** to display Akobo, South Sudan. Imagery tiles are fetched directly from Esri in the browser and are not committed, cached, or redistributed by this repository. The notebook displays the provider credit **“Powered by Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community.”** The Akobo view is centered at approximately **7.79293° N, 33.00294° E**, based on OpenStreetMap/GeoNames-derived place references.
+| Lab | Explore | Artifact / exercise |
+|---|---|---|
+| [01 · Orbital ground track](book/notebooks/01_orbit_ground_track.ipynb) | Circular orbit and rotating Earth; 3D surface trace | Check inclination and period |
+| [02 · Sensor footprint](book/notebooks/02_sensor_footprint.ipynb) | Horizon and minimum-elevation geometry | Compare geometric visibility limits |
+| [03 · Constellation](book/notebooks/03_constellation_dashboard.ipynb) | Synthetic subpoints and site access over time | Distinguish occupancy from coverage |
+| [04 · Akobo imagery](book/notebooks/04_akobo_satellite_imagery.ipynb) | Esri satellite basemap, HUD, distance and provenance | Label acquisition-date uncertainty |
+| [05 · EOC picture](book/notebooks/05_eoc_common_operating_picture.ipynb) | Linked count/rate/exposure maps, status and freshness | Export an interactive map and GeoJSON |
+| [06 · Spatial epidemiology](book/notebooks/06_spatial_epidemiology.ipynb) | Onset curve, denominators, Wilson intervals, reporting delay | Interpret a rate without claiming causation |
+| [07 · Health access](book/notebooks/07_health_access_logistics.ipynb) | Clinic closure, distance, speed and capacity sensitivity | Identify modeling assumptions |
+| [08 · NASA Worldview](book/notebooks/08_worldview_remote_sensing.ipynb) | Dated imagery requests, synthetic NDWI and cloud masking | Export an imagery manifest |
+| [09 · 3D scenes](book/notebooks/09_cesium_3d_scenes.ipynb) | Cesium 2D/3D, thematic columns, timed route, invented terrain | Explore scale, occlusion and time |
+| [10 · GPT-6 Astra](book/notebooks/10_astra_geospatial_analyst.ipynb) | Evidence packet, structured request, image context and response checks | Reject unsupported citations |
+| [11 · Spatial uncertainty](book/notebooks/11_spatial_uncertainty.ipynb) | Moran's I, seeded permutation test and aggregation | Explain scale and inference limits |
+| [12 · Response capstone](book/notebooks/12_capstone_response.ipynb) | GeoJSON, CZML, scene, manifest and tabletop injects | Deliver a reviewable exercise handover |
 
-Its MONO, NVG-like, and THERMAL-like buttons are only browser display filters; they do not represent real sensor products.
+Open any notebook in [JupyterLite](https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html), wait for **Python (Pyodide)**, then **Run → Run All Cells**. Keep the helper modules and `data/` / `viewers/` folders alongside the notebooks. Use the generated Download links to preserve browser work.
 
-## Local build
+## What Astra adds
+
+The documented `gpt-6-astra` model supports text/image input, reasoning, coding, tool calling, and structured output. This repository applies those capabilities to evidence synthesis, map interpretation, analytical critique, and briefing preparation. Numerical calculations remain explicit Python; visual reasoning is not a coordinate survey or a validated diagnostic method. [Official model documentation](https://developers.openai.com/api/docs/models/gpt-6-astra), [image limitations](https://developers.openai.com/api/docs/guides/images-vision), [structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs) (checked 2 October 2026).
+
+Notebook 10 includes a clearly labeled illustrative fixture and a dry-run request. Optional live use runs through `tools/astra_brief.py` in a **local Python process** with `OPENAI_API_KEY` in its environment. It uses Responses, checks the aggregate input contract and cited source IDs, and handles incomplete/refused output. No key goes into JupyterLite or Pages. Live API calls incur usage and require model access; they are not part of CI. Schema validity does not establish factual validity.
+
+![Evidence workflow from observation context to reviewed handover](book/assets/evidence-workflow.svg)
+
+See [getting started](book/getting-started.md), [EOC playbook](book/eoc-playbook.md), [integration guide](book/integration.md), [glossary](book/glossary.md), and [data dictionary](book/notebooks/data/README.md).
+
+## Citation, attribution and licenses
+
+**Primary inspiration:** Bilawal Sidhu. *God's Eye View* (2026). [Source repository](https://github.com/bilawalsidhu/gods-eye-view). Integration inspected at [`e7707d9a0f34d9fbffc300023c319f95caa5be30`](https://github.com/bilawalsidhu/gods-eye-view/tree/e7707d9a0f34d9fbffc300023c319f95caa5be30).
+
+Upstream source is **MIT**, copyright © 2026 Bilawal Sidhu. Its MIT grant excludes third-party data and assets. Consult the [upstream LICENSE](https://github.com/bilawalsidhu/gods-eye-view/blob/main/LICENSE), [DATA_SOURCES.md](https://github.com/bilawalsidhu/gods-eye-view/blob/main/DATA_SOURCES.md), and [3D-model credits](https://github.com/bilawalsidhu/gods-eye-view/blob/main/public/models/README.md). No upstream models, imagery, bundled infrastructure data, or source implementation are copied here. Some upstream datasets have NonCommercial or ShareAlike conditions; those do not become MIT by appearing in an MIT application.
+
+| Used here | Credit and terms |
+|---|---|
+| Original code, prose and synthetic fixtures | [MIT license](LICENSE), © 2026 James L. Tobias and contributors |
+| Leaflet 1.9.4 | © Vladimir Agafonkin and contributors; [BSD-2-Clause](https://github.com/Leaflet/Leaflet/blob/v1.9.4/LICENSE), runtime CDN |
+| CesiumJS 1.124.0 | Cesium contributors; [Apache-2.0](https://github.com/CesiumGS/cesium/blob/1.124/LICENSE.md), runtime CDN; provider credits stay visible |
+| Esri World Imagery | Runtime imagery in 04, optional in 05; **Powered by Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community**. [Service details](https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer), [Esri terms](https://www.esri.com/en-us/legal/terms/full-master-agreement) |
+| NASA Worldview / GIBS | Links and request construction in 08; [NASA GIBS](https://nasa-gibs.github.io/gibs-api-docs/access-basics/) and product-specific provenance apply. No NASA imagery is bundled |
+| Jupyter Book / JupyterLite / Pyodide | Executable Book and Project Jupyter communities / Pyodide contributors; BSD-3-Clause / BSD-3-Clause / MPL-2.0; [notices](THIRD_PARTY_NOTICES.md) |
+| NumPy / Matplotlib | Their contributors; BSD-3-Clause / Matplotlib's PSF-based license; [notices](THIRD_PARTY_NOTICES.md) |
+| Splash artwork | AI-generated illustration using OpenAI's built-in image generation tool; synthetic visual, not sensor evidence. [Prompt and provenance](book/assets/README.md) |
+
+The book cites [CDC field epidemiology](https://www.cdc.gov/field-epi-manual/php/chapters/index.html), [WHO AccessMod](https://www.who.int/tools/accessmod-geographic-access-to-health-care), [PySAL](https://pysal.org/esda/stable/user-guide/global_morans_i.html), and [GeoJSON RFC 7946](https://www.rfc-editor.org/rfc/rfc7946). See [full attributions](book/attribution.md) and [CITATION.cff](CITATION.cff). Akobo coordinates are an approximate pre-existing view center, not a survey. CSS “thermal”/“NVG” looks are display effects, not sensor bands. Tiles are fetched at runtime; they are not committed or redistributed as data, although browsers/providers may cache them normally.
+
+This project is independent and is not affiliated with or endorsed by Bilawal Sidhu, OpenAI, NASA, CDC, WHO, Esri, Cesium, or other providers. It is for education and exercises, not validated clinical, navigation, dispatch, orbit-determination, or safety-of-life decisions.
+
+## Build and verify
+
+CI uses Python 3.12 and Node 24. [Validation results and browser-testing limits](VALIDATION.md) distinguish build/contract checks from live-service and browser testing.
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-jupyter-book build book
+# Activate: source .venv/bin/activate
+# PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python scripts/build_demos.py
+node --test tests/test_viewers.mjs
+jupyter-book build book --warningiserror --keep-going
 jupyter lite build --contents book/notebooks --output-dir book/_build/html/lite
+python scripts/verify_site.py
+python -m http.server 8000 --directory book/_build/html
 ```
 
-Open `book/_build/html/index.html` for the Jupyter Book and `book/_build/html/lite/lab/index.html` for JupyterLite.
-
-## Repository structure
+Open `http://localhost:8000/`. Use HTTP, not `file://`. CI executes all notebooks and builds both sites; pushes to `main` deploy Pages. Enable **Settings → Pages → Source: GitHub Actions** if needed. Pull requests build and validate without deployment.
 
 ```text
-.github/workflows/deploy-pages.yml   GitHub Pages build/deploy
-book/
-  _config.yml                        Jupyter Book configuration
-  _toc.yml                           Book table of contents
-  intro.md                           Book landing page
-  attribution.md                     Attribution and source notes
-  notebooks/
-    01_orbit_ground_track.ipynb
-    02_sensor_footprint.ipynb
-    03_constellation_dashboard.ipynb
-    04_akobo_satellite_imagery.ipynb
-requirements.txt
+book/notebooks/       12 labs, shared Python helpers, data/ and viewers/
+book/assets/          Splash, analytical preview and evidence infographic
+book/_static/demos/   Standalone viewers and example exports
+integrations/        God's Eye View local-layer adapter
+tools/astra_brief.py  Optional local-process API example (dry run by default)
+scripts/             Reproducible fixture, notebook and demo generation
+tests/               Numerical and request/response contract checks
 ```
-
-## Disclaimer
-
-This is an independent educational repository. It is not affiliated with or endorsed by Bilawal Sidhu, CelesTrak, Esri, OpenStreetMap, OpenSky, or other upstream providers. Simplified notebook calculations and display effects are for learning and visualization, not operational orbit determination, targeting, navigation, sensor analysis, or safety-of-life use.

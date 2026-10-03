@@ -1,8 +1,21 @@
 format: jb-book
 root: intro
 chapters:
+  - file: getting-started
+  - file: eoc-playbook
   - file: notebooks/01_orbit_ground_track
   - file: notebooks/02_sensor_footprint
   - file: notebooks/03_constellation_dashboard
   - file: notebooks/04_akobo_satellite_imagery
+  - file: notebooks/05_eoc_common_operating_picture
+  - file: notebooks/06_spatial_epidemiology
+  - file: notebooks/07_health_access_logistics
+  - file: notebooks/08_worldview_remote_sensing
+  - file: notebooks/09_cesium_3d_scenes
+  - file: notebooks/10_astra_geospatial_analyst
+  - file: notebooks/11_spatial_uncertainty
+  - file: notebooks/12_capstone_response
+  - file: integration
+  - file: notebooks/data/README
+  - file: glossary
   - file: attribution

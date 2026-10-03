@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this educational repository and the upstream God's Eye View project."
+title: "God's Eye View: JupyterLite Geospatial Learning Lab"
+type: software
+authors:
+  - family-names: Tobias
+    given-names: James L.
+repository-code: "https://github.com/jltobias/JupyterLite-Gods-Eye-View-Satellite"
+url: "https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/"
+license: MIT
+date-released: 2026-10-02
+keywords: [geospatial, JupyterLite, emergency operations, spatial epidemiology, global health, Cesium, GPT-6 Astra]
+references:
+  - type: software
+    title: "God's Eye View"
+    authors:
+      - family-names: Sidhu
+        given-names: Bilawal
+    repository-code: "https://github.com/bilawalsidhu/gods-eye-view"
+    year: 2026
